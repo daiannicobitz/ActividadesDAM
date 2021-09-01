@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+<!--     Dimensiones seekbar y switch-->
+    <dimen name="ancho_seekbar">125dp</dimen>
+    <dimen name="ancho_switch">20dp</dimen>
+
+</resources>

@@ -12,6 +12,8 @@
     <string name="text_direccion_retiro">Direccion de retiro</string>
     <string name="text_terminos_condiciones">Aceptar terminos y condiciones</string>
     <string name="text_publicar">Publicar</string>
+    <string name="text_cero">0</string>
+    <string name="text_cien">100</string>
 
     <!--  Strings para los atributos text  -->
     <string name="hint_titulo">Titulo del producto</string>
