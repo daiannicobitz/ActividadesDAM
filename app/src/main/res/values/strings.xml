@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">ActividadesDAM</string>
+
+    <string name="app_name">Compra-Venta</string>
+    <!--  Strings para los atributos text  -->
+    <string name="text_titulo">Titulo</string>
+    <string name="text_descripcion">Descripcion(opcional)</string>
+    <string name="text_email">Correo electrónico</string>
+    <string name="text_precio">Precio</string>
+    <string name="text_categoria">Categoria</string>
+    <string name="text_descuento">Porcentaje de descuento de envio</string>
+    <string name="text_retiro_en_persona">Retiro en persona</string>
+    <string name="text_direccion_retiro">Direccion de retiro</string>
+    <string name="text_terminos_condiciones">Aceptar terminos y condiciones</string>
+    <string name="text_publicar">Publicar</string>
+
+    <!--  Strings para los atributos text  -->
+    <string name="hint_titulo">Titulo del producto</string>
+    <string name="hint_descripcion">Descripcion del producto</string>
+    <string name="hint_email">Correo electrónico del usuario</string>
+    <string name="hint_precio">Precio del producto</string>
+    <string name="hint_direccion_retiro">Direccion de retiro del producto</string>
+
 </resources>
