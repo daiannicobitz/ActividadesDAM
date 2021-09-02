@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        scrollView = findViewById(R.id.scrollPantalla);
+        scrollView = findViewById(R.id.scrollPantalla1);
         //Llenar el spinner de categorias
 
         final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
@@ -175,5 +175,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+   /*public boolean validarTexto(String texto){
+
+        boolean retorno=false;
+
+
+        return texto.matches("^[[A-Z]|[a-z]|[]]{*}$");
+    }*/
 
 }
