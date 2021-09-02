@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Visibilidad del seekbar
 
-        Switch switch_descuento = findViewById(R.id.switch1);
+        Switch switch_descuento = findViewById(R.id.switchDescuento);
         LinearLayout layout_seekbar_descuento = findViewById(R.id.layout_descuento);
 
         switch_descuento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Visibilidad del editText direccion de retiro
 
-        CheckBox checkbox_retiro = findViewById(R.id.checkBox1);
+        CheckBox checkbox_retiro = findViewById(R.id.checkBoxRetiro);
 
-        editText_retiro = findViewById(R.id.editTextTextPersonName3);
+        editText_retiro = findViewById(R.id.editTextDireccionRetiro);
 
         checkbox_retiro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
             @Override
@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         if(titulo.isEmpty()){
             Toast.makeText(this,"Debes ingresar un titulo",Toast.LENGTH_LONG).show(); //Mensaje que avisa al usuario.
         }
+
+
+
     }
 
 }
