@@ -14,7 +14,7 @@
         android:text="@string/text_titulo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTxtTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -113,7 +113,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:min="0"
             android:max="100"
             />
         <TextView
@@ -156,5 +155,6 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="Publicar"
         android:text="@string/text_publicar" />
 </LinearLayout>

@@ -10,15 +10,18 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    EditText editText_retiro, editText_titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Llenar el spinner de categorias
 
         final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         //Visibilidad del seekbar
+
         Switch switch_descuento = findViewById(R.id.switch1);
         LinearLayout layout_seekbar_descuento = findViewById(R.id.layout_descuento);
 
@@ -43,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
         }});
 
         //Visibilidad del editText direccion de retiro
+
         CheckBox checkbox_retiro = findViewById(R.id.checkBox1);
 
-        EditText editText_retiro = findViewById(R.id.editTextTextPersonName3);
+        editText_retiro = findViewById(R.id.editTextTextPersonName3);
 
         checkbox_retiro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
             @Override
@@ -58,6 +63,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }});
 
+        //Validacion de datos obligatorios
+
+        editText_titulo= findViewById(R.id.editTxtTitulo);
+
+
+    }
+
+    //Validar elementos al presionar el boton PUBLICAR
+    public void Publicar(View view){
+
+        String titulo=editText_titulo.getText().toString();
+
+        if(titulo.isEmpty()){
+            Toast.makeText(this,"Debes ingresar un titulo",Toast.LENGTH_LONG).show(); //Mensaje que avisa al usuario.
+        }
     }
 
 }
