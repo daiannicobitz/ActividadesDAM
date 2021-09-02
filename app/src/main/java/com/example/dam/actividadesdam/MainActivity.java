@@ -9,19 +9,23 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout layout_seekbar_descuento;
+    ScrollView scrollView;
     EditText editText_titulo;
     EditText editText_precio;
     EditText editText_email;
     EditText editText_descripcion;
     EditText editText_retiro;
+    TextView textView_direccionRetiro;
     CheckBox checkbox_retiro;
     CheckBox checkbox_terminosYCondiciones;
     Switch switch_descuento;
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        scrollView = findViewById(R.id.scrollPantalla);
         //Llenar el spinner de categorias
 
         final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         editText_retiro = findViewById(R.id.editTextDireccionRetiro);
         checkbox_retiro = findViewById(R.id.checkBoxRetiro);
+        textView_direccionRetiro = findViewById(R.id.textViewDireccionRetiro);
 
         checkbox_retiro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
             @Override
@@ -70,8 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if(isChecked){
                     editText_retiro.setVisibility(View.VISIBLE);
+                    textView_direccionRetiro.setVisibility(View.VISIBLE);
                 }else{
                     editText_retiro.setVisibility(View.GONE);
+                    textView_direccionRetiro.setVisibility(View.GONE);
                 }
             }});
 
@@ -84,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if(isChecked){
                     botonPublicar.setVisibility(View.VISIBLE);
+                    scrollView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                        }
+                    });
                 }else{
                     botonPublicar.setVisibility(View.GONE);
                 }

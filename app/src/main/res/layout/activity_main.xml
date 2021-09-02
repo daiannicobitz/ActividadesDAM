@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:id="@+id/scrollPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_titulo" />
+        android:text="@string/text_titulo"
+        android:textSize="@dimen/tamaño_letra"
+        android:paddingTop="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTxtTitulo"
@@ -26,7 +33,9 @@
         android:id="@+id/textViewDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_descripcion" />
+        android:text="@string/text_descripcion"
+        android:textSize="@dimen/tamaño_letra"
+        android:paddingTop="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextDescripcion"
@@ -41,7 +50,9 @@
         android:id="@+id/textViewEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_email" />
+        android:text="@string/text_email"
+        android:textSize="@dimen/tamaño_letra"
+        android:paddingTop="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -56,7 +67,9 @@
         android:id="@+id/textViewPrecio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_precio" />
+        android:text="@string/text_precio"
+        android:textSize="@dimen/tamaño_letra"
+        android:paddingTop="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextPrecio"
@@ -71,12 +84,15 @@
         android:id="@+id/textViewCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_categoria" />
+        android:text="@string/text_categoria"
+        android:textSize="@dimen/tamaño_letra"
+        android:paddingTop="@dimen/padding"/>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,7 +103,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/text_descuento"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textSize="@dimen/tamaño_letra"
+            android:paddingTop="@dimen/padding"/>
         <Switch
             android:id="@+id/switchDescuento"
             android:layout_width="wrap_content"
@@ -106,7 +124,8 @@
             android:id="@+id/textViewCero"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/text_cero"/>
+            android:text="@string/text_cero"
+            android:textSize="@dimen/tamaño_letra"/>
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -119,7 +138,8 @@
             android:id="@+id/textViewCien"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/text_cien"/>
+            android:text="@string/text_cien"
+            android:textSize="@dimen/tamaño_letra"/>
     </LinearLayout>
 
     <CheckBox
@@ -133,7 +153,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_direccion_retiro"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:textSize="@dimen/tamaño_letra"
+        android:paddingTop="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextDireccionRetiro"
@@ -158,4 +180,6 @@
         android:onClick="Publicar"
         android:visibility="gone"
         android:text="@string/text_publicar" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
