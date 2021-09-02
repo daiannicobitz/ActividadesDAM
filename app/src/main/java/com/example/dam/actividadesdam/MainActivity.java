@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Spinner spinner = findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
 
+        //Visibilidad del seekbar
         Switch switch_descuento = findViewById(R.id.switch1);
         LinearLayout layout_seekbar_descuento = findViewById(R.id.layout_descuento);
 
@@ -38,6 +41,22 @@ public class MainActivity extends AppCompatActivity {
                 layout_seekbar_descuento.setVisibility(View.GONE);
             }
         }});
+
+        //Visibilidad del editText direccion de retiro
+        CheckBox checkbox_retiro = findViewById(R.id.checkBox1);
+
+        EditText editText_retiro = findViewById(R.id.editTextTextPersonName3);
+
+        checkbox_retiro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
+            @Override
+            public void onCheckedChanged (CompoundButton buttonView , boolean isChecked ){
+
+                if(isChecked){
+                    editText_retiro.setVisibility(View.VISIBLE);
+                }else{
+                    editText_retiro.setVisibility(View.GONE);
+                }
+            }});
 
     }
 
