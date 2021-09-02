@@ -14,12 +14,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editText_titulo= findViewById(R.id.editTxtTitulo);
-    EditText editText_precio = findViewById(R.id.editTextPrecio);
-    EditText editText_email = findViewById(R.id.editTextEmail);
-    EditText editText_descripcion = findViewById(R.id.editTextDescripcion);
-    EditText editText_retiro = findViewById(R.id.editTextDireccionRetiro);
-    CheckBox checkbox_retiro = findViewById(R.id.checkBoxRetiro);
+
+    EditText editText_titulo;
+    EditText editText_precio;
+    EditText editText_email;
+    EditText editText_descripcion;
+    EditText editText_retiro;
+    CheckBox checkbox_retiro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Visibilidad del editText direccion de retiro
 
+        editText_retiro = findViewById(R.id.editTextDireccionRetiro);
+        checkbox_retiro = findViewById(R.id.checkBoxRetiro);
+
         checkbox_retiro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
             @Override
             public void onCheckedChanged (CompoundButton buttonView , boolean isChecked ){
@@ -65,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
             }});
 
         //Validacion de datos obligatorios
+        editText_titulo = findViewById(R.id.editTxtTitulo);
+        editText_precio = findViewById(R.id.editTextPrecio);
+        editText_email = findViewById(R.id.editTextEmail);
+        editText_descripcion = findViewById(R.id.editTextDescripcion);
 
 
     }
@@ -96,9 +104,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Debe ingresar una direccion de retiro",Toast.LENGTH_LONG).show();
         }
 
-        if(!email.isEmpty()){
 
-        }
 
     }
 
