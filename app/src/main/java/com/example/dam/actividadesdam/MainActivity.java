@@ -146,66 +146,62 @@ public class MainActivity extends AppCompatActivity {
         String email = editText_email.getText().toString();
         String descripcion = editText_descripcion.getText().toString();
         boolean todoCorrecto = true;
+        boolean datosObligatorios=true;
+        //Validar datos obligatorios
 
         if(titulo.isEmpty()){
             todoCorrecto = false;
+            datosObligatorios=false;
             Toast.makeText(this,"Debes ingresar un titulo",Toast.LENGTH_LONG).show(); //Mensaje que avisa al usuario.
-        }else if(!validarLinea(titulo)){
-            Toast.makeText(this,"El titulo es invalido (Solo se aceptan simbolos como . y , y no se aceptan saltos en linea)",Toast.LENGTH_LONG).show();
-
+        }else if(precioAux.isEmpty()){
+                    todoCorrecto = false;
+                    datosObligatorios=false;
+                    Toast.makeText(this, "Debe ingresar un precio",Toast.LENGTH_LONG).show();
+        }else if(checkbox_retiro.isChecked()){
+                if(direccionRetiro.isEmpty()){
+                    todoCorrecto = false;
+                    datosObligatorios=false;
+                    Toast.makeText(this, "Debe ingresar una direccion de retiro",Toast.LENGTH_LONG).show();
+                }
         }
 
-        if(!validarTexto(descripcion)){
-            Toast.makeText(this,"La descripcion es invalida (Solo se aceptan simbolos como . y ,)",Toast.LENGTH_LONG).show();
-        }
-
-        if(precioAux.isEmpty()){
-            todoCorrecto = false;
-            Toast.makeText(this, "Debe ingresar un precio",Toast.LENGTH_LONG).show();
-        }else{
+        if(datosObligatorios){
             Float precio = Float.parseFloat(precioAux);
             if(precio<=0){
                 todoCorrecto = false;
                 Toast.makeText(this, "El precio debe ser positivo",Toast.LENGTH_LONG).show();
-            }
-        }
+            }else  if(!validarLinea(titulo)){
+                todoCorrecto=false;
+                Toast.makeText(this,"El titulo es invalido (Solo se aceptan simbolos como . y , y no se aceptan saltos en linea)",Toast.LENGTH_LONG).show();
 
-        //Categoria esta definido automaticamente indumentaria
-
-        if(checkbox_retiro.isChecked()){
-            if(direccionRetiro.isEmpty()){
-            todoCorrecto = false;
-            Toast.makeText(this, "Debe ingresar una direccion de retiro",Toast.LENGTH_LONG).show();
+            }else if(!validarTexto(descripcion)){
+                todoCorrecto=false;
+                Toast.makeText(this,"La descripcion es invalida (Solo se aceptan simbolos como . y ,)",Toast.LENGTH_LONG).show();
             }else if(!validarLinea(direccionRetiro)){
                 Toast.makeText(this,"La direccion de retiro es invalida (Solo se aceptan simbolos como . y , y no se aceptan saltos en linea)",Toast.LENGTH_LONG).show();
-            }
-        }
-
-        if(!email.isEmpty()){           //Se valida que el email no este vacio
-            if(email.length()<5){
-                todoCorrecto = false;//Se valida que el email contenga 5 caracteres 0 + (x@xxx)
-                System.out.println("ERROR");
-            }else{
-                int asciiValue = 64;
-                char convertedChar = (char)asciiValue;
-                if(!email.contains(String.valueOf(convertedChar))){ //Se valida que contenga @
-                    todoCorrecto = false;
+            }else if((switch_descuento.isChecked()) && (seekBar.getProgress()==0)){ //Validacion seekbar !=0
+                todoCorrecto = false;
+                Toast.makeText(this, "Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio",Toast.LENGTH_LONG).show();
+            }else if(!email.isEmpty()){           //Se valida que el email no este vacio
+                if(email.length()<5){
+                    todoCorrecto = false;//Se valida que el email contenga 5 caracteres 0 + (x@xxx)
                     System.out.println("ERROR");
                 }else{
-                    if(email.length()-email.indexOf(String.valueOf(convertedChar))-1<3){
+                    int asciiValue = 64;
+                    char convertedChar = (char)asciiValue;
+                    if(!email.contains(String.valueOf(convertedChar))){ //Se valida que contenga @
+                        todoCorrecto = false;
+                        System.out.println("ERROR");
+                    }else if(email.length()-email.indexOf(String.valueOf(convertedChar))-1<3){
                         //Se valida que la cantidad de caracteres luego del @ sea 3 o mas
                         todoCorrecto = false;
                         System.out.println("ERROR");
-                    }}}
-
-        }
-
-        //Validacion seekbar !=0
-        if(switch_descuento.isChecked()){
-            if(seekBar.getProgress()==0){
-                todoCorrecto = false;
-                Toast.makeText(this, "Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio",Toast.LENGTH_LONG).show();
+                    }
+                }
             }
+
+
+
         }
 
         if(todoCorrecto){
