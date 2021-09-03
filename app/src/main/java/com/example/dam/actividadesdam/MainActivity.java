@@ -164,8 +164,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Debe ingresar un precio",Toast.LENGTH_LONG).show();
         }else{
             Float precio = Float.parseFloat(precioAux);
-            Toast.makeText(this, precio.toString(),Toast.LENGTH_LONG).show();
-
             if(precio<=0){
                 todoCorrecto = false;
                 Toast.makeText(this, "El precio debe ser positivo",Toast.LENGTH_LONG).show();
@@ -198,7 +196,9 @@ public class MainActivity extends AppCompatActivity {
                         //Se valida que la cantidad de caracteres luego del @ sea 3 o mas
                         todoCorrecto = false;
                         System.out.println("ERROR");
-                    }}}}
+                    }}}
+
+        }
 
         //Validacion seekbar !=0
         if(switch_descuento.isChecked()){

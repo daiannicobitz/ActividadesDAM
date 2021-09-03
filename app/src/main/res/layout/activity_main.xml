@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:text="@string/text_titulo"
         android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"/>
+        android:paddingTop="@dimen/padding"
+        android:paddingLeft="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTxtTitulo"
@@ -27,7 +28,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/hint_titulo"
-        android:cursorVisible="false"/>
+        android:cursorVisible="false"
+        android:paddingLeft="@dimen/padding"/>
 
     <TextView
         android:id="@+id/textViewDescripcion"
