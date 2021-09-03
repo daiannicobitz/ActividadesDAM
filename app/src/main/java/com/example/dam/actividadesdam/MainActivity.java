@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editText_descripcion;
     EditText editText_retiro;
     TextView textView_direccionRetiro;
+    TextView textView_porcentajeSeekbar;
+    TextView textView_seekBarMax;
     CheckBox checkbox_retiro;
     CheckBox checkbox_terminosYCondiciones;
     Switch switch_descuento;
@@ -51,12 +53,16 @@ public class MainActivity extends AppCompatActivity {
 
         switch_descuento = findViewById(R.id.switchDescuento);
         layout_seekbar_descuento = findViewById(R.id.layout_descuento);
+        textView_porcentajeSeekbar = (TextView)findViewById(R.id.textViewCero);
+        textView_seekBarMax = (TextView)findViewById(R.id.textViewCien);
 
         switch_descuento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
         @Override
         public void onCheckedChanged (CompoundButton buttonView , boolean isChecked ){
 
             if(isChecked){
+                textView_seekBarMax.setVisibility(View.VISIBLE);
+                textView_porcentajeSeekbar.setText("0");
                 layout_seekbar_descuento.setVisibility(View.VISIBLE);
             }else{
                 layout_seekbar_descuento.setVisibility(View.GONE);
@@ -102,12 +108,31 @@ public class MainActivity extends AppCompatActivity {
                 }
             }});
 
+
         //Validacion de datos obligatorios
         editText_titulo = findViewById(R.id.editTxtTitulo);
         editText_precio = findViewById(R.id.editTextPrecio);
         editText_email = findViewById(R.id.editTextEmail);
         editText_descripcion = findViewById(R.id.editTextDescripcion);
         seekBar = findViewById(R.id.seekBar);
+
+        //Mostrar el progreso del seekBar
+        seekBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    //hace un llamado a la perilla cuando se arrastra
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar,
+                                                  int progress, boolean fromUser) {
+                        textView_seekBarMax.setVisibility(View.GONE);
+                        textView_porcentajeSeekbar.setText(String.valueOf(progress)+" %");
+                    }
+                    //hace un llamado  cuando se toca la perilla
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+                    //hace un llamado  cuando se detiene la perilla
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+                });
 
     }
 
@@ -119,11 +144,19 @@ public class MainActivity extends AppCompatActivity {
         String precioAux = editText_precio.getText().toString();
         String direccionRetiro = editText_retiro.getText().toString();
         String email = editText_email.getText().toString();
+        String descripcion = editText_descripcion.getText().toString();
         boolean todoCorrecto = true;
 
         if(titulo.isEmpty()){
             todoCorrecto = false;
             Toast.makeText(this,"Debes ingresar un titulo",Toast.LENGTH_LONG).show(); //Mensaje que avisa al usuario.
+        }else if(!validarLinea(titulo)){
+            Toast.makeText(this,"El titulo es invalido (Solo se aceptan simbolos como . y , y no se aceptan saltos en linea)",Toast.LENGTH_LONG).show();
+
+        }
+
+        if(!validarTexto(descripcion)){
+            Toast.makeText(this,"La descripcion es invalida (Solo se aceptan simbolos como . y ,)",Toast.LENGTH_LONG).show();
         }
 
         if(precioAux.isEmpty()){
@@ -131,6 +164,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Debe ingresar un precio",Toast.LENGTH_LONG).show();
         }else{
             Float precio = Float.parseFloat(precioAux);
+            Toast.makeText(this, precio.toString(),Toast.LENGTH_LONG).show();
+
             if(precio<=0){
                 todoCorrecto = false;
                 Toast.makeText(this, "El precio debe ser positivo",Toast.LENGTH_LONG).show();
@@ -139,9 +174,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Categoria esta definido automaticamente indumentaria
 
-        if(checkbox_retiro.isChecked() && direccionRetiro.isEmpty()){
+        if(checkbox_retiro.isChecked()){
+            if(direccionRetiro.isEmpty()){
             todoCorrecto = false;
             Toast.makeText(this, "Debe ingresar una direccion de retiro",Toast.LENGTH_LONG).show();
+            }else if(!validarLinea(direccionRetiro)){
+                Toast.makeText(this,"La direccion de retiro es invalida (Solo se aceptan simbolos como . y , y no se aceptan saltos en linea)",Toast.LENGTH_LONG).show();
+            }
         }
 
         if(!email.isEmpty()){           //Se valida que el email no este vacio
@@ -171,17 +210,24 @@ public class MainActivity extends AppCompatActivity {
 
         if(todoCorrecto){
             Toast.makeText(this, "Producto publicado correctamente",Toast.LENGTH_LONG).show();
-
         }
 
     }
 
-   /*public boolean validarTexto(String texto){
+    public boolean validarLinea(String linea){
 
-        boolean retorno=false;
+        return linea.matches("[a-zA-Z|0-9|.|,]*");
+    }
 
+    public boolean validarTexto(String texto){
 
-        return texto.matches("^[[A-Z]|[a-z]|[]]{*}$");
+        return texto.matches("[a-zA-Z|0-9|.|,|\n]*");
+    }
+
+    /*public boolean validarPrecio(Float precio){
+
+        return precio.toString().matches("^[0-9]+([,][0-9]+)?$");
     }*/
+
 
 }
