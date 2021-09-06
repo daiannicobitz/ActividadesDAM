@@ -212,12 +212,12 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean validarLinea(String linea){
 
-        return linea.matches("[a-zA-Z|0-9|.|,]*");
+        return linea.matches("[a-zA-Z|0-9|.|,\\s]*");
     }
 
     public boolean validarTexto(String texto){
 
-        return texto.matches("[a-zA-Z|0-9|.|,|\n]*");
+        return texto.matches("[a-zA-Z|0-9|.|,|,\\s\n]*");
     }
 
     /*public boolean validarPrecio(Float precio){
