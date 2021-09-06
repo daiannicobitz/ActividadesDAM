@@ -4,6 +4,8 @@
 <!--     Dimensiones seekbar y switch-->
     <dimen name="ancho_seekbar">125dp</dimen>
     <dimen name="ancho_switch">20dp</dimen>
+    <dimen name="tamaño_boton">60dp</dimen>
     <dimen name="tamaño_letra">19dp</dimen>
+    <dimen name="tamaño_letra_grande">22dp</dimen>
     <dimen name="padding">5dp</dimen>
 </resources>

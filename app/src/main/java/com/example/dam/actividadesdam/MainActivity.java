@@ -185,17 +185,17 @@ public class MainActivity extends AppCompatActivity {
             }else if(!email.isEmpty()){           //Se valida que el email no este vacio
                 if(email.length()<5){
                     todoCorrecto = false;//Se valida que el email contenga 5 caracteres 0 + (x@xxx)
-                    System.out.println("ERROR");
+                    Toast.makeText(this, "El correo debe contener 5 caracteres como minimo",Toast.LENGTH_LONG).show();
                 }else{
                     int asciiValue = 64;
                     char convertedChar = (char)asciiValue;
                     if(!email.contains(String.valueOf(convertedChar))){ //Se valida que contenga @
                         todoCorrecto = false;
-                        System.out.println("ERROR");
+                        Toast.makeText(this, "El correo debe contener el caracter '@'",Toast.LENGTH_LONG).show();
                     }else if(email.length()-email.indexOf(String.valueOf(convertedChar))-1<3){
                         //Se valida que la cantidad de caracteres luego del @ sea 3 o mas
                         todoCorrecto = false;
-                        System.out.println("ERROR");
+                        Toast.makeText(this, "El correo debe contener 3 caracteres luego del '@'",Toast.LENGTH_LONG).show();
                     }
                 }
             }

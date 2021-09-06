@@ -17,9 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_titulo"
-        android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"
-        android:paddingLeft="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra_grande"
+        android:padding="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTxtTitulo"
@@ -29,15 +28,16 @@
         android:inputType="textPersonName"
         android:hint="@string/hint_titulo"
         android:cursorVisible="false"
-        android:paddingLeft="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra"
+        android:padding="@dimen/padding"/>
 
     <TextView
         android:id="@+id/textViewDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_descripcion"
-        android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra_grande"
+        android:padding="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextDescripcion"
@@ -46,15 +46,18 @@
         android:ems="10"
         android:hint="@string/hint_descripcion"
         android:inputType="textMultiLine"
-        android:cursorVisible="false"/>
+        android:cursorVisible="false"
+        android:textSize="@dimen/tamaño_letra"
+        android:padding="@dimen/padding"/>
 
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_email"
-        android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra_grande"
+        android:padding="@dimen/padding"
+        />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -63,15 +66,17 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="@string/hint_email"
-        android:cursorVisible="false"/>
+        android:cursorVisible="false"
+        android:textSize="@dimen/tamaño_letra"
+        android:padding="@dimen/padding"/>
 
     <TextView
         android:id="@+id/textViewPrecio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_precio"
-        android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra_grande"
+        android:padding="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextPrecio"
@@ -80,21 +85,24 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:hint="@string/hint_precio"
-        android:cursorVisible="false"/>
+        android:cursorVisible="false"
+        android:textSize="@dimen/tamaño_letra"
+        android:padding="@dimen/padding"/>
 
     <TextView
         android:id="@+id/textViewCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_categoria"
-        android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra_grande"
+        android:padding="@dimen/padding"/>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:spinnerMode="dialog" />
+        android:spinnerMode="dialog"
+        android:padding="@dimen/padding"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,12 +114,13 @@
             android:layout_height="match_parent"
             android:text="@string/text_descuento"
             android:layout_weight="1"
-            android:textSize="@dimen/tamaño_letra"
-            android:paddingTop="@dimen/padding"/>
+            android:textSize="@dimen/tamaño_letra_grande"
+            android:padding="@dimen/padding"/>
         <Switch
             android:id="@+id/switchDescuento"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/padding" />
 
     </LinearLayout>
 
@@ -127,7 +136,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/text_cero"
-            android:textSize="@dimen/tamaño_letra"/>
+            android:textSize="@dimen/tamaño_letra"
+            />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -149,7 +159,8 @@
         android:id="@+id/checkBoxRetiro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_retiro_en_persona"/>
+        android:text="@string/text_retiro_en_persona"
+        android:textSize="@dimen/tamaño_letra"/>
 
     <TextView
         android:id="@+id/textViewDireccionRetiro"
@@ -157,8 +168,8 @@
         android:layout_height="wrap_content"
         android:text="@string/text_direccion_retiro"
         android:visibility="gone"
-        android:textSize="@dimen/tamaño_letra"
-        android:paddingTop="@dimen/padding"/>
+        android:textSize="@dimen/tamaño_letra_grande"
+        android:padding="@dimen/padding"/>
 
     <EditText
         android:id="@+id/editTextDireccionRetiro"
@@ -168,21 +179,27 @@
         android:inputType="textPersonName"
         android:hint="@string/hint_direccion_retiro"
         android:visibility="gone"
-        android:cursorVisible="false"/>
+        android:cursorVisible="false"
+        android:textSize="@dimen/tamaño_letra"
+        android:padding="@dimen/padding"/>
 
     <CheckBox
         android:id="@+id/checkBoxTerminosCondiciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_terminos_condiciones" />
+        android:text="@string/text_terminos_condiciones"
+        android:textSize="@dimen/tamaño_letra"
+        android:padding="@dimen/padding"/>
 
     <Button
         android:id="@+id/buttonPublicar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/tamaño_boton"
         android:onClick="Publicar"
         android:visibility="gone"
-        android:text="@string/text_publicar" />
+        android:text="@string/text_publicar"
+
+        android:textSize="@dimen/tamaño_letra_grande"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
