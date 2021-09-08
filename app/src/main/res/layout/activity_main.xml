@@ -2,6 +2,7 @@
 <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/celeste_claro"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <ScrollView
         android:id="@+id/scrollPantalla1"
@@ -10,7 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/textViewTitulo"
@@ -50,7 +51,8 @@
                 android:singleLine="false"
                 android:cursorVisible="false"
                 android:textSize="@dimen/tamaño_letra"
-                android:padding="@dimen/padding"/>
+                android:padding="@dimen/padding"
+                />
 
             <TextView
                 android:id="@+id/textViewEmail"
@@ -118,7 +120,9 @@
                     android:layout_height="match_parent"
                     android:spinnerMode="dialog"
                     android:layout_weight="4"
-                    android:padding="@dimen/padding"/>
+                    android:padding="@dimen/padding"
+                    android:theme="@style/mySpinnerItemStyle"
+                    />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"

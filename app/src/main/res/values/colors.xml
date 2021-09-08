@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="verde_pastel">#DCF9E4</color>
+
+    <!--    Paleta de colores Actividad inicio-->
+    <color name="verde_petroleo">#006D77</color>
+    <color name="verde_petroleo_claro">#83C5BE</color>
+    <color name="celeste_claro">#EDF6F9</color>
+    <color name="salmon_claro">#FFDDD2</color>
+    <color name="salmon">#E29578</color>
+
+
 </resources>

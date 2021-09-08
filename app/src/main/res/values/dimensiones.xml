@@ -7,5 +7,6 @@
     <dimen name="tamaño_boton">60dp</dimen>
     <dimen name="tamaño_letra">19dp</dimen>
     <dimen name="tamaño_letra_grande">22dp</dimen>
+    <dimen name="tamaño_letra_supergrande">30dp</dimen>
     <dimen name="padding">5dp</dimen>
 </resources>

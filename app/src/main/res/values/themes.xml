@@ -2,9 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.ActividadesDAM" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimary">@color/verde_petroleo</item>
+        <item name="colorPrimaryDark">@color/salmon</item>
+        <item name="colorAccent">@color/verde_petroleo_claro</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textSize">@dimen/tamaño_letra_grande</item>
+    </style>
+
+
 </resources>
