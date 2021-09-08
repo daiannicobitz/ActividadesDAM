@@ -12,13 +12,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_titulo"
-        android:textSize="@dimen/tamaño_letra_grande"
-        android:padding="@dimen/padding"/>
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="@string/text_titulo"
+                android:textSize="@dimen/tamaño_letra_grande" />
 
     <EditText
         android:id="@+id/editTxtTitulo"
@@ -42,10 +42,12 @@
     <EditText
         android:id="@+id/editTextDescripcion"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/hint_descripcion"
         android:inputType="textMultiLine"
+        android:minLines="1"
+        android:singleLine="false"
         android:cursorVisible="false"
         android:textSize="@dimen/tamaño_letra"
         android:padding="@dimen/padding"/>
