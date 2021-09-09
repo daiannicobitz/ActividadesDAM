@@ -10,6 +10,7 @@
 
     <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
         <item name="android:textSize">@dimen/tamaño_letra_grande</item>
+
     </style>
 
 
