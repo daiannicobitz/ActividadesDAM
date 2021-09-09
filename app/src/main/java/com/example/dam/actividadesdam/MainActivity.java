@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //Llenar el spinner de categorias
 
         final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, R.layout.spinner_item,categorias);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         spinner = findViewById(R.id.spinner);
