@@ -20,9 +20,11 @@ public class CategoryRecyclerActivity extends AppCompatActivity {
         setContentView(R.layout.cat_fila);
 
         recyclerView = findViewById(R.id.listaRecycler);
-        recyclerView.setHasFixedSize(true);
+       // recyclerView.setHasFixedSize(true);
+
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
         mAdapter = new CategoryRecyclerAdapter(Category.lista());
         recyclerView.setAdapter(mAdapter);
     }

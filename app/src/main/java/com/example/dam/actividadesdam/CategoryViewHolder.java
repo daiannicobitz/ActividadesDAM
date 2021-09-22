@@ -7,10 +7,8 @@ import android.widget.TextView;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder{
 
-    TextView id;
-    TextView nombreCat;
-
-
+    public TextView id;
+    public TextView nombreCat;
 
     public CategoryViewHolder(View v) {
         super(v);
