@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkbox_retiro;
     CheckBox checkbox_terminosYCondiciones;
     Switch switch_descuento;
-    Spinner spinner;
+//    Spinner spinner;
     SeekBar seekBar;
     Button botonPublicar;
 
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
-        spinner = findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
+//        spinner = findViewById(R.id.spinner);
+//        spinner.setAdapter(adapter);
 
         //Visibilidad del seekbar
 

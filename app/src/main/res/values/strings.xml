@@ -7,6 +7,7 @@
     <string name="text_email">Correo electrónico(opcional)</string>
     <string name="text_precio">Precio</string>
     <string name="text_categoria">Categoria</string>
+    <string name="text_boton_categoria">Seleccionar Categoria</string>
     <string name="text_descuento">Porcentaje de descuento de envio</string>
     <string name="text_retiro_en_persona">Retiro en persona</string>
     <string name="text_direccion_retiro">Direccion de retiro</string>
