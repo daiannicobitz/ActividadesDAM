@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_cat_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/tamaño_letra_grande">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listaRecycler"
@@ -9,5 +12,4 @@
         android:layout_height="match_parent" />
 
 
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

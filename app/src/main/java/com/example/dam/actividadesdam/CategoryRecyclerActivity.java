@@ -9,20 +9,20 @@ public class CategoryRecyclerActivity extends AppCompatActivity {
 
     Category categoria;
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
+//    private RecyclerView recyclerView;
+      private CategoryRecyclerAdapter mAdapter;
+//    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         categoria = new Category();
-        setContentView(R.layout.cat_fila);
+        setContentView(R.layout.activity_cat_recycler);
 
-        recyclerView = findViewById(R.id.listaRecycler);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listaRecycler);
        // recyclerView.setHasFixedSize(true);
 
-        layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         mAdapter = new CategoryRecyclerAdapter(Category.lista());
