@@ -54,7 +54,7 @@ public class Category implements Parcelable {
         Category categoria1 = new Category("MLA5725", "Accesorios para Vehículos");
         Category categoria2 = new Category("MLA1512", "Agro");
 
-        ArrayList<Category> listaCat = new ArrayList<>();
+        List<Category> listaCat = new ArrayList<Category>();
         listaCat.add(categoria1);
         listaCat.add(categoria2);
 

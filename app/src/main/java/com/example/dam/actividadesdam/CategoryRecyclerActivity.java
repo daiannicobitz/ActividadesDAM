@@ -26,6 +26,10 @@ public class CategoryRecyclerActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         mAdapter = new CategoryRecyclerAdapter(Category.lista());
+//        System.out.println(Category.lista().get(0).getId());
+//        System.out.println(Category.lista().get(0).getNombreCategoria());
+//        System.out.println(Category.lista().get(1).getId());
+//        System.out.println(Category.lista().get(1).getNombreCategoria());
         recyclerView.setAdapter(mAdapter);
     }
 

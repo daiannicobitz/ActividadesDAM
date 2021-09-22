@@ -31,11 +31,10 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryViewHo
 
     @Override
     public void onBindViewHolder(CategoryViewHolder categoryViewHolder, int i) {
-        categoryViewHolder.id.setTag(i);
-        categoryViewHolder.nombreCat.setTag(i);
-
-//        categoryViewHolder.id.setText(listaCategorias.get(i).getId());
-//        categoryViewHolder.nombreCat.setText(listaCategorias.get(i).getNombreCategoria());
+//        categoryViewHolder.id.setTag(i);
+//        categoryViewHolder.nombreCat.setTag(i);
+        categoryViewHolder.id.setText(listaCategorias.get(i).getId());
+        categoryViewHolder.nombreCat.setText(listaCategorias.get(i).getNombreCategoria());
     }
 
     @Override
