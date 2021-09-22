@@ -1,5 +1,6 @@
 package com.example.dam.actividadesdam;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
         layout_seekbar_descuento = findViewById(R.id.layout_descuento);
         textView_porcentajeSeekbar = (TextView)findViewById(R.id.textViewCero);
         textView_seekBarMax = (TextView)findViewById(R.id.textViewCien);
+
+        botonCategoria = findViewById(R.id.botonCategoria);
+        botonCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent( MainActivity.this , CategoryRecyclerActivity.class);
+                i.putExtra("UN_EXTRA", 9999L);
+                startActivityForResult(i,999);
+            }
+        });
 
         switch_descuento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
         @Override
