@@ -28,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     TextView textView_direccionRetiro;
     TextView textView_porcentajeSeekbar;
     TextView textView_seekBarMax;
+    TextView textView_categoriaSeleccionada;
     CheckBox checkbox_retiro;
     CheckBox checkbox_terminosYCondiciones;
     Switch switch_descuento;
 //    Spinner spinner;
     SeekBar seekBar;
+    Button botonCategoria;
     Button botonPublicar;
 
     @Override
@@ -41,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         scrollView = findViewById(R.id.scrollPantalla1);
         //Llenar el spinner de categorias
-
-        final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//
+//        final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
+//        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
 //        spinner = findViewById(R.id.spinner);
 //        spinner.setAdapter(adapter);

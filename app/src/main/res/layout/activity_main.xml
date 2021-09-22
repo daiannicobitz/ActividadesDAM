@@ -99,28 +99,44 @@
                     android:layout_weight="2"
                     android:padding="@dimen/padding"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="@dimen/padding">
 
-                <TextView
-                    android:id="@+id/textViewCategoria"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_categoria"
-                    android:textSize="@dimen/tamaño_letra_grande"
-                    android:layout_weight="1"
-                    android:padding="@dimen/padding"/>
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding">
+
+                    <TextView
+                        android:id="@+id/textViewCategoria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_categoria"
+                        android:textSize="@dimen/tamaño_letra_grande"
+                        android:layout_weight="5"/>
+
+                    <TextView
+                        android:id="@+id/textViewCategoriaSeleccionada"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_categoria_selec"
+                        android:textSize="@dimen/tamaño_letra_grande"
+                        android:layout_weight="3"/>
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:text="@string/text_boton_categoria" />
+                    android:text="@string/text_boton_categoria"
+                    android:textSize="@dimen/tamaño_letra_grande"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
