@@ -21,12 +21,12 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryViewHo
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int tipo) {
-//        View v = LayoutInflater.from(viewGroup.getContext())
-//                .inflate(R.layout.cat_fila, parent, false);
-//        //....
-//        CategoryViewHolder vh = new CategoryViewHolder(v);
-//        return vh;
-        return null;
+        View v = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.cat_fila, viewGroup, false);
+        //....
+        CategoryViewHolder vh = new CategoryViewHolder(v);
+        return vh;
+
     }
 
     @Override

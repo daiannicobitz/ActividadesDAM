@@ -14,7 +14,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder{
 
     public CategoryViewHolder(View v) {
         super(v);
-        //id = v.findViewById(R.id.idcat);
-        //nombreCat = v.findViewById(nombrecat);
+        id = v.findViewById(R.id.idcat);
+        nombreCat = v.findViewById(R.id.nombrecat);
     }
 }
