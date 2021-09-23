@@ -53,11 +53,26 @@ public class Category implements Parcelable {
     public static List<Category> lista(){
         Category categoria1 = new Category("MLA5725", "Accesorios para Vehículos");
         Category categoria2 = new Category("MLA1512", "Agro");
+        Category categoria3 = new Category("MLA1403", "Alimentos y Bebidas");
+        Category categoria4 = new Category("MLA1071", "Animales y Mascotas");
+        Category categoria5 = new Category("MLA1367", "Antigüedades y Colecciones");
+        Category categoria6 = new Category("MLA1368", "Arte, Librería y Mercería");
+        Category categoria7 = new Category("MLA1743", "Autos, Motos y Otros");
+        Category categoria8 = new Category("MLA1384", "Bebés");
+        Category categoria9 = new Category("MLA1246", "Belleza y Cuidado Personal");
+        Category categoria10 = new Category("MLA1039", "Cámaras y Accesorios");
 
         List<Category> listaCat = new ArrayList<Category>();
         listaCat.add(categoria1);
         listaCat.add(categoria2);
-
+        listaCat.add(categoria3);
+        listaCat.add(categoria4);
+        listaCat.add(categoria5);
+        listaCat.add(categoria6);
+        listaCat.add(categoria7);
+        listaCat.add(categoria8);
+        listaCat.add(categoria9);
+        listaCat.add(categoria10);
         return listaCat;
     }
 
