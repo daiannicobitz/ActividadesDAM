@@ -1,5 +1,6 @@
 package com.example.dam.actividadesdam;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,11 +29,13 @@ public class MainActivity extends AppCompatActivity {
     TextView textView_direccionRetiro;
     TextView textView_porcentajeSeekbar;
     TextView textView_seekBarMax;
+    TextView textView_categoriaSeleccionada;
     CheckBox checkbox_retiro;
     CheckBox checkbox_terminosYCondiciones;
     Switch switch_descuento;
-    Spinner spinner;
+//    Spinner spinner;
     SeekBar seekBar;
+    Button botonCategoria;
     Button botonPublicar;
 
     @Override
@@ -41,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         scrollView = findViewById(R.id.scrollPantalla1);
         //Llenar el spinner de categorias
+//
+//        final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
+//        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
-        final String[] categorias = {"Indumentaria", "Electrónica", "Entretenimiento", "Jardin", "Vehículos", "Juguetes"};
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categorias);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-
-        spinner = findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
+//        spinner = findViewById(R.id.spinner);
+//        spinner.setAdapter(adapter);
 
         //Visibilidad del seekbar
 
@@ -55,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
         layout_seekbar_descuento = findViewById(R.id.layout_descuento);
         textView_porcentajeSeekbar = (TextView)findViewById(R.id.textViewCero);
         textView_seekBarMax = (TextView)findViewById(R.id.textViewCien);
+
+        botonCategoria = findViewById(R.id.botonCategoria);
+        botonCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent( MainActivity.this , CategoryRecyclerActivity.class);
+                i.putExtra("UN_EXTRA", 9999L);
+                startActivityForResult(i,999);
+            }
+        });
 
         switch_descuento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
         @Override
