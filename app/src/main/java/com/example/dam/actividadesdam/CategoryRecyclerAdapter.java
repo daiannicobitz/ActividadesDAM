@@ -1,5 +1,7 @@
 package com.example.dam.actividadesdam;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,9 +14,11 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryViewHo
 
 
     private List<Category> listaCategorias;
+    private CategoryRecyclerActivity actividad;
 
-    public CategoryRecyclerAdapter(List<Category> lista){
+    public CategoryRecyclerAdapter(List<Category> lista , CategoryRecyclerActivity act ){
         listaCategorias = lista;
+        actividad = act;
     }
 
 
@@ -23,7 +27,6 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryViewHo
     public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int tipo) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.cat_fila, viewGroup, false);
-        //....
         CategoryViewHolder vh = new CategoryViewHolder(v);
         return vh;
 
@@ -35,13 +38,10 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryViewHo
 //        categoryViewHolder.nombreCat.setTag(i);
         categoryViewHolder.id.setText(listaCategorias.get(i).getId());
         categoryViewHolder.nombreCat.setText(listaCategorias.get(i).getNombreCategoria());
-        categoryViewHolder.botonAgregar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("ASHE");
-            }
-        });
+        categoryViewHolder.setOnClickListener(actividad);
     }
+
+
 
     @Override
     public int getItemCount(){

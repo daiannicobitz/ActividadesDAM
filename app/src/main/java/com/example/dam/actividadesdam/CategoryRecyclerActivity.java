@@ -1,9 +1,12 @@
 package com.example.dam.actividadesdam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 public class CategoryRecyclerActivity extends AppCompatActivity {
 
@@ -25,9 +28,20 @@ public class CategoryRecyclerActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new CategoryRecyclerAdapter(Category.lista());
+        mAdapter = new CategoryRecyclerAdapter(Category.lista(),this);
         recyclerView.setAdapter(mAdapter);
     }
+
+    public void volverActividad(TextView categoriaSeleccionada){
+
+        String aux = categoriaSeleccionada.getText().toString();
+        Intent intentResultado = new Intent();
+        intentResultado.putExtra("Categoria", aux);
+        setResult(999,intentResultado);
+        finish();
+    }
+
+
 
 
 

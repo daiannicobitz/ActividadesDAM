@@ -1,6 +1,7 @@
 package com.example.dam.actividadesdam;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -58,16 +59,7 @@ public class MainActivity extends AppCompatActivity {
         layout_seekbar_descuento = findViewById(R.id.layout_descuento);
         textView_porcentajeSeekbar = (TextView)findViewById(R.id.textViewCero);
         textView_seekBarMax = (TextView)findViewById(R.id.textViewCien);
-
-        botonCategoria = findViewById(R.id.botonCategoria);
-        botonCategoria.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent( MainActivity.this , CategoryRecyclerActivity.class);
-                i.putExtra("UN_EXTRA", 9999L);
-                startActivityForResult(i,999);
-            }
-        });
+        textView_categoriaSeleccionada = (TextView) findViewById(R.id.textViewCategoriaSeleccionada);
 
         switch_descuento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
         @Override
@@ -147,6 +139,26 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        botonCategoria = findViewById(R.id.botonCategoria);
+        botonCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent( MainActivity.this , CategoryRecyclerActivity.class);
+                i.putExtra("UN_EXTRA", 9999L);
+                startActivityForResult(i,999);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode , int resultCode , @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==999)
+        {
+            String cat=data.getStringExtra("Categoria");
+            textView_categoriaSeleccionada.setText(cat);
+        }
     }
 
     //Validar elementos al presionar el boton PUBLICAR
