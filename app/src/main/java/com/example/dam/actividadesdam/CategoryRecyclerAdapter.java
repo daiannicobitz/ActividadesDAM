@@ -35,6 +35,12 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryViewHo
 //        categoryViewHolder.nombreCat.setTag(i);
         categoryViewHolder.id.setText(listaCategorias.get(i).getId());
         categoryViewHolder.nombreCat.setText(listaCategorias.get(i).getNombreCategoria());
+        categoryViewHolder.botonAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("ASHE");
+            }
+        });
     }
 
     @Override
